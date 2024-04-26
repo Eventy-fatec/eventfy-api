@@ -1,0 +1,23 @@
+{
+  "name": "eventfy-api",
+  "version": "1.0.0",
+  "description": "Projeto de eventos para o P.I",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --transpile-only --trace-warnings --inspect --ignore-watch node_modules src/infra/http/server.ts",
+    "build": "rimraf dist/* && tsc -p tsconfig.json && tscpaths -p tsconfig.json -s . -o ./dist",
+    "start": "node src/infra/http/server.js",
+    "test": "NODE_ENV=test jest --runInBand"
+  },
+  "author": "Eventfy",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.13.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "eslint": "^9.1.1",
+    "express": "^4.19.2",
+    "prettier": "^3.2.5",
+    "prisma": "^5.13.0"
+  }
+}
