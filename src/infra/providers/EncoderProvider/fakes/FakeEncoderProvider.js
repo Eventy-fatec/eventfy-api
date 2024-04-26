@@ -4,11 +4,12 @@ import { IEncoderProvider } from '@infra/providers/EncoderProvider/IEncoderProvi
 
 @injectable()
 export class FakeEncoderProvider implements IEncoderProvider {
-  public async encode(plain: string): Promise<string> {
+  public async encode(plain) {
     return `${plain}ENCRYPTED`;
   }
 
-  public async compare(plain: string, hashed: string): Promise<boolean> {
+  
+  public async compare(plain, hashed) {
     return `${plain}ENCRYPTED` === hashed;
   }
 }
