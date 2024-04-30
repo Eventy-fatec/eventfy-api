@@ -1,7 +1,7 @@
-const { prisma } = require('../../lib/prisma');
+import { prisma } from '../../../lib/prisma.js';
 
 async function findUser(id) {
   return prisma.user.findUnique({ where: { id: Number(id) } });
 }
 
-module.exports = { findUser }
+export { findUser };

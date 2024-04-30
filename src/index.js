@@ -1,9 +1,11 @@
-const express = require('express');
-const { routes } = require('./infra/http/routes');
+import express from 'express';
+import { routes } from './routes/routes.js';
+
 const app = express();
+const port = 3000;
 
-app.use(routes)
+app.use(routes);
 
-app.listen(3333, () => {
-  console.log(`Example app listening on port 3333`)
+app.listen(port, () => {
+  console.log(`Server rodando na porta ${port}`);
 });

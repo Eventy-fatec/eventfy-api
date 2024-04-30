@@ -1,4 +1,4 @@
-function validateCreateUserMissingFields(data) {
+export const validateUserMissingFields = (data) => {
   const missingFields = [];
 
   if(!data?.email){
@@ -16,5 +16,3 @@ function validateCreateUserMissingFields(data) {
 
   return missingFields
 }
-
-module.exports = { validateCreateUserMissingFields }

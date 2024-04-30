@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "Projeto de eventos para o P.I",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon --experimental-modules src/index.js -r esm"
   },
   "keywords": [],
   "author": "Eventfy",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.13.0",
+    "axios": "^1.6.8",
+    "esm": "^3.2.25",
     "express": "^4.19.2",
     "nodemon": "^3.1.0"
   },
