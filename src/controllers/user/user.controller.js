@@ -3,7 +3,7 @@ import { findUser } from './methods/find-user.js';
 import { listUsers } from './methods/list-users.js';
 import { updateUsers } from './methods/update-users.js';
 
-export class UserController {
+export default class UserController {
   static async get(req, res) {
     const users = await listUsers();
     res.json(users);
@@ -20,7 +20,7 @@ export class UserController {
 
   static async post(req, res) {
     const user = await createUsers(req.body);
-    if (typeof use === 'string') {
+    if (typeof user === 'string') {
       return res.status(400).json({ error: user });
     }
     return res.json(user);
@@ -32,5 +32,9 @@ export class UserController {
       return res.status(400).json({ error: user });
     }
     return res.json(user);
+  }
+
+  static async delete(req, res){
+    
   }
 }

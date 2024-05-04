@@ -7,5 +7,5 @@ const port = 3000;
 app.use(routes);
 
 app.listen(port, () => {
-  console.log(`Server rodando na porta ${port}`);
+  console.log(`Server rodando em http://localhost:${port}`);
 });

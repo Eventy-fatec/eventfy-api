@@ -1,7 +1,7 @@
-import { prisma } from '../../../lib/prisma.js';
+import User from '../../../models/user.model.js'
 
 async function listUsers() {
-  return prisma.user.findMany();
+  return User.findMany();
 }
 
 export { listUsers };

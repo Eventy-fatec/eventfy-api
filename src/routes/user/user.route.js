@@ -10,4 +10,4 @@ userRoutes.post('/', UserController.post);
 
 userRoutes.put('/:id', UserController.put);
 
-export { userRoutes };
+export default userRoutes;
