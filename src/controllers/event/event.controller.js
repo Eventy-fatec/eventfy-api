@@ -1,22 +1,22 @@
 import { validationResult } from 'express-validator';
-import User from '../../models/user.model.js';
+import Event from '../../models/event.model.js';
 
-export default class UserController {
+export default class EventController {
   static async get(req, res) {
-    const users = await User.findMany();
-    return res.json(users);
+    const events = await Event.findMany();
+    return res.json(events);
   }
 
   static async find(req, res) {
-    const user = await User.findUnique({
+    const event = await Event.findUnique({
       where: {
         id: +req.params.id,
       },
     });
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado' });
+    if (!event) {
+      return res.status(404).json({ message: 'Evento não encontrado' });
     }
-    return res.json(user);
+    return res.json(Event);
   }
 
   static async post(req, res) {
@@ -26,11 +26,11 @@ export default class UserController {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const user = await User.create({
+    const event = await Event.create({
       data: req.body,
     });
 
-    return res.json(user);
+    return res.json(event);
   }
 
   static async put(req, res) {
@@ -38,21 +38,21 @@ export default class UserController {
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const user = await User.findUnique({
+    const event = await Event.findUnique({
       where: {
         id: +req.params.id,
       },
     });
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado' });
+    if (!event) {
+      return res.status(404).json({ message: 'Evento não encontrado' });
     }
-    const updatedUser = await User.update({
+    const updatedEvent = await Event.update({
       where: {
         id: +req.params.id,
       },
       data: req.body,
     });
-    return res.json(updatedUser);
+    return res.json(updatedEvent);
   }
 
   static async delete(req, res) {
@@ -60,19 +60,19 @@ export default class UserController {
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const user = await User.findUnique({
+    const event = await Event.findUnique({
       where: {
         id: +req.params.id,
       },
     });
-    if (!user) {
-      return res.status(404).json({ message: 'Usuário não encontrado' });
+    if (!event) {
+      return res.status(404).json({ message: 'Evento não encontrado' });
     }
-    await User.delete({
+    await Event.delete({
       where: {
         id: +req.params.id,
       },
     });
-    return res.status(204).json({ message: 'Usuário deletado com sucesso' });
+    return res.status(204).json({ message: 'Evento deletado com sucesso' });
   }
 }

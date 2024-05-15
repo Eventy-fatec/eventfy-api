@@ -14,6 +14,38 @@ model User {
   cpf       String   @unique
   cellphone String?
   birthdate DateTime
+  events    Event[]
 
   @@map("user")
+}
+
+model Event {
+  id           Int    @id @default(autoincrement())
+  title        String
+  description  String
+  openingDate  String
+  closingDate  String
+  startTime    String
+  finishTime   String
+  User         User?  @relation(fields: [userId], references: [id])
+  userId       Int?
+  street       String
+  streetNumber String
+  city         City   @relation(fields: [cityId], references: [id])
+  cityId       Int
+}
+
+model City {
+  id      Int     @id @default(autoincrement())
+  name    String  @unique
+  state   State   @relation(fields: [stateId], references: [id])
+  stateId Int
+  Event   Event[]
+}
+
+model State {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+  uf   String @unique
+  City City[]
 }
