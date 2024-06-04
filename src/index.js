@@ -5,7 +5,7 @@ import swaggerDocs from './swagger.json' with {type: "json"};
 
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 app.use(routes);
 
