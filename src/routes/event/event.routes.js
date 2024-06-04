@@ -9,4 +9,4 @@ eventRoutes.post('/', createEventValidator, EventController.post);
 eventRoutes.put('/:id', updateEventValidator, EventController.put);
 eventRoutes.delete('/:id', deleteEventValidator, EventController.delete);
 
-export { eventRoutes };
+export default eventRoutes;
