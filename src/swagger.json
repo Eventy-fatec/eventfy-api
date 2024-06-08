@@ -3,7 +3,7 @@
     "info": {
         "title": "EVENTFY-API",
         "description": "Essa API tem como objetivo ser uma E-commerce de venda de ingressos para eventos e festas. A aplicação foi desenvolvida com Node e para inicia-la, basta apenas utilizar o comando npm start.",
-        "termsOfService": "http/localhost:3001/",
+        "termsOfService": "http/localhost:3000/",
         "contact": {
             "name": "API Support Code",
             "url": "https://github.com/Eventy-fatec/eventfy-api",
@@ -13,7 +13,7 @@
     },
     "servers": [
         {
-            "url": "https://localhost:3001",
+            "url": "https://localhost:3000",
             "description": "API de Produção"
         }
     ],
@@ -23,6 +23,13 @@
                 "summary": "Registro do usuário",
                 "description": "Rota responsável por retornar as informações do usuário.",
                 "tags": ["Users"]            
+            }
+        },
+        "/events": {
+            "get": {
+                "summary": "Registro de eventos na plataforna",
+                "description": "Rota responsável por retornar as informações dos eventos cadastrados na plataforma.",
+                "tags": ["Events"]            
             }
         }
     }
