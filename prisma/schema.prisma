@@ -14,7 +14,9 @@ model User {
   cpf       String   @unique
   cellphone String?
   birthdate DateTime
+  password  String
   events    Event[]
+
 
   @@map("user")
 }
