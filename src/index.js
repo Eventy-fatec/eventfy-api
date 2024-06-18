@@ -1,6 +1,6 @@
 import express from 'express';
 import swaggerUi from 'swagger-ui-express';
-import { routes } from './routes/routes.js';
+import routes from './routes/routes.js';
 import swaggerDocs from './swagger.json' assert {type: "json"};
 
 
